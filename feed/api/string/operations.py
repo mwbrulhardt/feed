@@ -1,5 +1,4 @@
 
-
 from feed.core.base import Stream
 from feed.api.string import String
 

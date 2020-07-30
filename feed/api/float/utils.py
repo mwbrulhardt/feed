@@ -1,7 +1,7 @@
 
 import numpy as np
 
-from feed.core import Stream
+from feed.core.base import Stream
 from feed.core.operators import BinOp
 
 from feed.api.float import Float

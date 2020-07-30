@@ -3,7 +3,7 @@ import numpy as np
 
 from typing import List
 
-from feed.core import Stream
+from feed.core.base import Stream
 from feed.api.float import Float
 
 
@@ -34,9 +34,6 @@ class RollingCount(RollingNode):
     def forward(self):
         rolling = self.inputs[0]
         history = rolling.value
-
-        if len(history) < rolling.min_periods:
-            return np.nan
         return self.func(history)
 
 

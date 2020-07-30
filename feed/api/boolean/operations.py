@@ -1,6 +1,5 @@
 
 from feed.core.base import Stream
-
 from feed.api.boolean import Boolean
 
 

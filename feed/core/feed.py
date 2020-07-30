@@ -5,14 +5,14 @@ from feed.core.base import Stream, T
 
 class DataFeed(Stream[T]):
 
-    def __init__(self, nodes=None):
+    def __init__(self, streams=None):
         super().__init__()
 
         self.process = None
         self.compiled = False
 
-        if nodes:
-            self.__call__(*nodes)
+        if streams:
+            self.__call__(*streams)
 
     def compile(self):
         edges = self.gather()
@@ -35,15 +35,11 @@ class DataFeed(Stream[T]):
 
     def next(self):
         self.run()
-
-        for listener in self.listeners:
-            listener.on_next(self.value)
-
         return self.value
 
     def has_next(self) -> bool:
         return all(node.has_next() for node in self.process)
 
     def reset(self) -> None:
-        for node in self.process:
-            node.reset()
+        for s in self.process:
+            s.reset()

@@ -1,6 +1,6 @@
 
 
-from feed.core.base import Observable, Stream, NameSpace
+from feed.core import Stream, NameSpace
 
 
 class Counter(Stream):

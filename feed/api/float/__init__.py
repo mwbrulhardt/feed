@@ -1,6 +1,6 @@
 
 
-from feed.core.base import Stream
+from feed.core import Stream
 from feed.core.methods import Methods
 from feed.core.mixins import DataTypeMixin
 

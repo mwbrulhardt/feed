@@ -1,19 +1,14 @@
 
-from typing import Iterable
-
-
 from feed.core.base import Stream, T
 from feed.core.operators import (
     Apply,
     Lag,
-    Reduce,
-    Select,
     Freeze,
     Accumulator,
     Copy
 )
 
-from typing import Callable, Iterable
+from typing import Callable
 
 
 @Stream.register_generic_method(["apply"])
@@ -28,16 +23,6 @@ def lag(s: "Stream[T]", lag: int = 1, dtype=None) -> "Stream[T]":
     if dtype is None:
         dtype = s.dtype
     return Lag(lag, dtype=dtype)(s)
-
-
-@Stream.register_generic_method(["reduce"])
-def reduce(*streams: "Iterable[Stream[T]]", func: "Callable[[Iterable[T]], T]") -> "Stream[T]":
-    return Reduce(func)(*streams).asdtype(streams[0].dtype)
-
-
-@Stream.register_generic_method(["select"])
-def select(*streams: "Iterable[Stream[T]]", func: "Callable[[Iterable[T]], T]") -> "Stream[T]":
-    return Select(func)(*streams)
 
 
 @Stream.register_generic_method(["copy"])

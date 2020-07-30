@@ -48,21 +48,6 @@ class Lag(Stream[T]):
         self.history = []
 
 
-class Reduce(Stream[T]):
-
-    generic_name = "reduce"
-
-    def __init__(self, func):
-        super().__init__()
-        self.func = func
-
-    def forward(self):
-        return self.func([node.value for node in self.inputs])
-
-    def has_next(self):
-        return True
-
-
 class Accumulator(Stream[T]):
 
     def __init__(self, func, dtype=None):

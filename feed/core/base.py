@@ -7,7 +7,8 @@ from typing import (
     TypeVar,
     Dict,
     Any,
-    Callable
+    Callable,
+    List
 )
 
 from feed.core.accessors import CachedAccessor
@@ -19,14 +20,18 @@ T = TypeVar("T")
 class Observable:
 
     def __init__(self):
-        self.listeners = []
+        self._listeners = []
+
+    @property
+    def listeners(self):
+        return self._listeners
 
     def attach(self, listener):
-        self.listeners += [listener]
+        self._listeners += [listener]
         return self
 
     def detach(self, listener):
-        self.listeners.remove(listener)
+        self._listeners.remove(listener)
         return self
 
 
@@ -122,12 +127,19 @@ class Stream(Generic[T], Named, Observable):
         return _Stream(iterable, dtype=dtype)
 
     @staticmethod
-    def group(*streams) -> "Stream[T]":
+    def group(streams: "List[Stream[T]]") -> "Stream[T]":
         return Group()(*streams)
 
     @staticmethod
-    def sensor(func: "Callable[[Any], T]", obj: "Any", dtype=None) -> "Stream[T]":
-        return Sensor(func, obj, dtype=dtype)
+    def sensor(obj: "Any", func: "Callable[[Any], T]", dtype=None) -> "Stream[T]":
+        return Sensor(obj, func, dtype=dtype)
+
+    @staticmethod
+    def select(streams: "List[Stream[T]]", func: "Callable[[Stream[T]], bool]") -> "Stream[T]":
+        for s in streams:
+            if func(s):
+                return s
+        raise Exception("No stream satisfies selector condition.")
 
     @staticmethod
     def constant(value: "Any", dtype=None) -> "Stream[T]":
@@ -270,7 +282,7 @@ class Sensor(Stream[T]):
         self.obj = obj
         self.func = func
 
-    def forward(self):
+    def forward(self) -> T:
         return self.func(self.obj)
 
     def has_next(self):
