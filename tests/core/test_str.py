@@ -1,5 +1,5 @@
 
-from feed.core import DataFeed, Stream
+from feed import DataFeed, Stream
 
 
 def test_str_accessor():

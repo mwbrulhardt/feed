@@ -1,6 +1,6 @@
 
 
-from feed.core import Stream, DataFeed
+from feed import Stream, DataFeed
 
 
 def test_generic():

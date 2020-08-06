@@ -1,5 +1,5 @@
 
-from feed.core import Stream
+from feed import Stream
 
 
 def test_boolean():

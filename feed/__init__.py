@@ -21,4 +21,4 @@ import feed.api.generic.operators as operators
 
 import feed.core
 
-from feed.core import Stream, NameSpace, DataFeed
+from .core import Stream, NameSpace, DataFeed

@@ -3,7 +3,7 @@ import pandas as pd
 
 from itertools import product
 
-from feed.core import Stream
+from feed import Stream
 
 from tests.utils.ops import assert_op
 

@@ -1,3 +1,3 @@
-from .base import Stream, NameSpace
-from .feed import DataFeed
-from .operators import Apply
+from feed.core.base import Stream, NameSpace
+from feed.core.feed import DataFeed
+from feed.core.operators import Apply
