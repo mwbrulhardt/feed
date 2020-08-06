@@ -1,31 +1,25 @@
-.. feed documentation master file, created by
-   sphinx-quickstart on Thu Aug  6 11:43:48 2020.
-   You can adapt this file completely to your liking, but it should at least
-   contain the root `toctree` directive.
-
 Welcome to feed's documentation!
 ================================
 
+
+Another simple header
+=====================
+
+Here is some text explaining some very complicated stuff.::
+
+    print("Hello world!!")
+    >> Hello world!!
+
+
+Guide
+^^^^^
+
 .. toctree::
    :maxdepth: 2
-   :caption: Contents:
+   
+   core
+   api
 
-
-Documentation for the Code
-**************************
-.. toctree::
-  :maxdepth: 2
-  :caption: Contents:
-
-feed feed
-===================
-.. automodule:: feed.core.feed
-  :members:
-
-feed operators
-===================
-.. automodule:: feed.core.operators
-:members:
 
 
 Indices and tables
