@@ -12,7 +12,7 @@ from feed.api.float import Float
 
 
 class ExponentialWeightedMovingAverage(Stream[float]):
-    """A stream operator that computes an exponential weighted moving average
+    r"""A stream operator that computes an exponential weighted moving average
     on a given float stream.
 
     Parameters
@@ -98,7 +98,7 @@ class ExponentialWeightedMovingAverage(Stream[float]):
 
 
 class ExponentialWeightedMovingCovariance(Stream[float]):
-    """A stream operator that computes an exponential weighted moving average
+    r"""A stream operator that computes an exponential weighted moving average
     on a given float stream.
 
     Parameters
@@ -239,7 +239,7 @@ class ExponentialWeightedMovingCovariance(Stream[float]):
 
 
 class EWM(Stream[List[float]]):
-    """Provide exponential weighted (EW) functions.
+    r"""Provide exponential weighted (EW) functions.
 
     Available EW functions: ``mean()``, ``var()``, ``std()``, ``corr()``, ``cov()``.
 
@@ -274,16 +274,16 @@ class EWM(Stream[List[float]]):
         - When ``adjust=True`` (default), the EW function is calculated using weights
           :math:`w_i = (1 - \alpha)^i`. For example, the EW moving average of the series
           [:math:`x_0, x_1, ..., x_t`] would be:
-        .. math::
-            y_t = \frac{x_t + (1 - \alpha)x_{t-1} + (1 - \alpha)^2 x_{t-2} + ... + (1 -
-            \alpha)^t x_0}{1 + (1 - \alpha) + (1 - \alpha)^2 + ... + (1 - \alpha)^t}
+            .. math::
+                y_t = \frac{x_t + (1 - \alpha)x_{t-1} + (1 - \alpha)^2 x_{t-2} + ... + (1 -
+                \alpha)^t x_0}{1 + (1 - \alpha) + (1 - \alpha)^2 + ... + (1 - \alpha)^t}
         - When ``adjust=False``, the exponentially weighted function is calculated
           recursively:
-        .. math::
-            \begin{split}
-                y_0 &= x_0\\
-                y_t &= (1 - \alpha) y_{t-1} + \alpha x_t,
-            \end{split}
+            .. math::
+                \begin{split}
+                    y_0 &= x_0\\
+                    y_t &= (1 - \alpha) y_{t-1} + \alpha x_t,
+                \end{split}
     ignore_na : bool, default False
         Ignore missing values when calculating weights.
         - When ``ignore_na=False`` (default), weights are based on absolute positions.
@@ -409,7 +409,7 @@ def ewm(s: "Stream[float]",
         min_periods: int = 0,
         adjust: bool = True,
         ignore_na: bool = False) -> "Stream[Tuple[List[float], List[float]]]":
-    """Computes the weights and values in order to perform an exponential
+    r"""Computes the weights and values in order to perform an exponential
     weighted moving operation.
 
     Parameters

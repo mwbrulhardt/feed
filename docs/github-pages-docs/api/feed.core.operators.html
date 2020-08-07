@@ -1,0 +1,535 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>feed.core.operators module &mdash; feed 0.0.1 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="feed.core.mixins module" href="feed.core.mixins.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> feed
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Home</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../overview/getting_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../overview/getting_started.html#installation">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../overview/getting_started.html#quick-start">Quick Start</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Tutorials</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/example_tutorial.html">First</a></li>
+</ul>
+<p class="caption"><span class="caption-text">API Reference</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">API reference</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="feed.html">feed package</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="feed.html#subpackages">Subpackages</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="feed.api.html">feed.api package</a></li>
+<li class="toctree-l4 current"><a class="reference internal" href="feed.core.html">feed.core package</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">feed</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="modules.html">feed</a> &raquo;</li>
+        
+          <li><a href="feed.html">feed package</a> &raquo;</li>
+        
+          <li><a href="feed.core.html">feed.core package</a> &raquo;</li>
+        
+      <li>feed.core.operators module</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/api/feed.core.operators.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-feed.core.operators">
+<span id="feed-core-operators-module"></span><h1>feed.core.operators module<a class="headerlink" href="#module-feed.core.operators" title="Permalink to this headline">¶</a></h1>
+<dl class="py class">
+<dt id="feed.core.operators.Accumulator">
+<em class="property">class </em><code class="sig-prename descclassname">feed.core.operators.</code><code class="sig-name descname">Accumulator</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">func</span></em>, <em class="sig-param"><span class="n">dtype</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#feed.core.operators.Accumulator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="feed.core.base.html#feed.core.base.Stream" title="feed.core.base.Stream"><code class="xref py py-class docutils literal notranslate"><span class="pre">feed.core.base.Stream</span></code></a></p>
+<p>An operator stream that accumulates values of a given stream.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>func</strong> (<em>Callable</em><em>[</em><em>[</em><em>T</em><em>,</em><em>T</em><em>]</em><em>, </em><em>T</em><em>]</em>) – An accumulator function.</p></li>
+<li><p><strong>dtype</strong> (<em>str</em>) – The data type of accumulated value.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt id="feed.core.operators.Accumulator.forward">
+<code class="sig-name descname">forward</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#feed.core.operators.Accumulator.forward" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generates the next value from the underlying data streams.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><cite>T</cite> – The next value in the stream.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="feed.core.operators.Accumulator.has_next">
+<code class="sig-name descname">has_next</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#feed.core.operators.Accumulator.has_next" title="Permalink to this definition">¶</a></dt>
+<dd><p>Checks if there is another value.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><em>bool</em> – If there is another value or not.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="feed.core.operators.Accumulator.reset">
+<code class="sig-name descname">reset</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#feed.core.operators.Accumulator.reset" title="Permalink to this definition">¶</a></dt>
+<dd><p>Resets all the listeners of the stream.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">None</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="feed.core.operators.Apply">
+<em class="property">class </em><code class="sig-prename descclassname">feed.core.operators.</code><code class="sig-name descname">Apply</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">func</span></em>, <em class="sig-param"><span class="n">dtype</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#feed.core.operators.Apply" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="feed.core.base.html#feed.core.base.Stream" title="feed.core.base.Stream"><code class="xref py py-class docutils literal notranslate"><span class="pre">feed.core.base.Stream</span></code></a></p>
+<p>An operator stream that applies a specific function to the values of
+a given stream.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>func</strong> (<cite>Callable[[T], …]</cite>) – A function to be applied to the values of a stream.</p></li>
+<li><p><strong>dtype</strong> (<em>str</em><em>, </em><em>optional</em>) – The data type of the values after function is applied.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt id="feed.core.operators.Apply.forward">
+<code class="sig-name descname">forward</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#feed.core.operators.Apply.forward" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generates the next value from the underlying data streams.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>~K</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><cite>T</cite> – The next value in the stream.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="feed.core.operators.Apply.has_next">
+<code class="sig-name descname">has_next</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#feed.core.operators.Apply.has_next" title="Permalink to this definition">¶</a></dt>
+<dd><p>Checks if there is another value.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><em>bool</em> – If there is another value or not.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="feed.core.operators.BinOp">
+<em class="property">class </em><code class="sig-prename descclassname">feed.core.operators.</code><code class="sig-name descname">BinOp</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">op</span></em>, <em class="sig-param"><span class="n">dtype</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#feed.core.operators.BinOp" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="feed.core.base.html#feed.core.base.Stream" title="feed.core.base.Stream"><code class="xref py py-class docutils literal notranslate"><span class="pre">feed.core.base.Stream</span></code></a></p>
+<p>A stream operator that combines the values of two given streams into
+one value of the same type.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>op</strong> (<cite>Callable[[T, T], T]</cite>) – The binary operation to be applied.</p></li>
+<li><p><strong>dtype</strong> (<em>str</em><em>, </em><em>optional</em>) – The data type of the stream.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt id="feed.core.operators.BinOp.forward">
+<code class="sig-name descname">forward</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#feed.core.operators.BinOp.forward" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generates the next value from the underlying data streams.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>~T</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><cite>T</cite> – The next value in the stream.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="feed.core.operators.BinOp.generic_name">
+<code class="sig-name descname">generic_name</code><em class="property">: str</em><em class="property"> = 'bin_op'</em><a class="headerlink" href="#feed.core.operators.BinOp.generic_name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="feed.core.operators.BinOp.has_next">
+<code class="sig-name descname">has_next</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#feed.core.operators.BinOp.has_next" title="Permalink to this definition">¶</a></dt>
+<dd><p>Checks if there is another value.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><em>bool</em> – If there is another value or not.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="feed.core.operators.Copy">
+<em class="property">class </em><code class="sig-prename descclassname">feed.core.operators.</code><code class="sig-name descname">Copy</code><a class="headerlink" href="#feed.core.operators.Copy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="feed.core.base.html#feed.core.base.Stream" title="feed.core.base.Stream"><code class="xref py py-class docutils literal notranslate"><span class="pre">feed.core.base.Stream</span></code></a></p>
+<p>A stream operator that copies the values of a given stream.</p>
+<dl class="py method">
+<dt id="feed.core.operators.Copy.forward">
+<code class="sig-name descname">forward</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#feed.core.operators.Copy.forward" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generates the next value from the underlying data streams.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>~T</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><cite>T</cite> – The next value in the stream.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="feed.core.operators.Copy.generic_name">
+<code class="sig-name descname">generic_name</code><em class="property">: str</em><em class="property"> = 'copy'</em><a class="headerlink" href="#feed.core.operators.Copy.generic_name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="feed.core.operators.Copy.has_next">
+<code class="sig-name descname">has_next</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#feed.core.operators.Copy.has_next" title="Permalink to this definition">¶</a></dt>
+<dd><p>Checks if there is another value.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><em>bool</em> – If there is another value or not.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="feed.core.operators.Freeze">
+<em class="property">class </em><code class="sig-prename descclassname">feed.core.operators.</code><code class="sig-name descname">Freeze</code><a class="headerlink" href="#feed.core.operators.Freeze" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="feed.core.base.html#feed.core.base.Stream" title="feed.core.base.Stream"><code class="xref py py-class docutils literal notranslate"><span class="pre">feed.core.base.Stream</span></code></a></p>
+<p>A stream operator that freezes the value of a given stream and generates
+that value.</p>
+<dl class="py method">
+<dt id="feed.core.operators.Freeze.forward">
+<code class="sig-name descname">forward</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#feed.core.operators.Freeze.forward" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generates the next value from the underlying data streams.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>~T</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><cite>T</cite> – The next value in the stream.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="feed.core.operators.Freeze.generic_name">
+<code class="sig-name descname">generic_name</code><em class="property">: str</em><em class="property"> = 'freeze'</em><a class="headerlink" href="#feed.core.operators.Freeze.generic_name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="feed.core.operators.Freeze.has_next">
+<code class="sig-name descname">has_next</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#feed.core.operators.Freeze.has_next" title="Permalink to this definition">¶</a></dt>
+<dd><p>Checks if there is another value.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><em>bool</em> – If there is another value or not.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="feed.core.operators.Freeze.reset">
+<code class="sig-name descname">reset</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#feed.core.operators.Freeze.reset" title="Permalink to this definition">¶</a></dt>
+<dd><p>Resets all the listeners of the stream.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">None</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="feed.core.operators.Lag">
+<em class="property">class </em><code class="sig-prename descclassname">feed.core.operators.</code><code class="sig-name descname">Lag</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">lag</span><span class="o">=</span><span class="default_value">1</span></em>, <em class="sig-param"><span class="n">dtype</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#feed.core.operators.Lag" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="feed.core.base.html#feed.core.base.Stream" title="feed.core.base.Stream"><code class="xref py py-class docutils literal notranslate"><span class="pre">feed.core.base.Stream</span></code></a></p>
+<p>An operator stream that returns the lagged value of a given stream.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>lag</strong> (<em>int</em>) – The number of steps to lag behind by</p></li>
+<li><p><strong>dtype</strong> (<em>str</em><em>, </em><em>optional</em>) – The data type of the stream</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt id="feed.core.operators.Lag.forward">
+<code class="sig-name descname">forward</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#feed.core.operators.Lag.forward" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generates the next value from the underlying data streams.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>~T</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><cite>T</cite> – The next value in the stream.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="feed.core.operators.Lag.generic_name">
+<code class="sig-name descname">generic_name</code><em class="property">: str</em><em class="property"> = 'lag'</em><a class="headerlink" href="#feed.core.operators.Lag.generic_name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="feed.core.operators.Lag.has_next">
+<code class="sig-name descname">has_next</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#feed.core.operators.Lag.has_next" title="Permalink to this definition">¶</a></dt>
+<dd><p>Checks if there is another value.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><em>bool</em> – If there is another value or not.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="feed.core.operators.Lag.reset">
+<code class="sig-name descname">reset</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#feed.core.operators.Lag.reset" title="Permalink to this definition">¶</a></dt>
+<dd><p>Resets all the listeners of the stream.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">None</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="feed.core.mixins.html" class="btn btn-neutral float-left" title="feed.core.mixins module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, Matthew Brulhardt
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

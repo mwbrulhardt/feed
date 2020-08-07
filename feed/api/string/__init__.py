@@ -1,7 +1,7 @@
 
-from typing import List
+from typing import List, Callable
 
-from feed.core import Stream
+from feed.core.base import Stream
 from feed.core.methods import Methods
 from feed.core.mixins import DataTypeMixin
 
@@ -20,7 +20,7 @@ class String:
     """A class to register accessor and instance methods."""
 
     @classmethod
-    def register(cls, names: List[str]):
+    def register(cls, names: "List[str]") -> "Callable":
         """A function decorator that adds accessor and instance methods for
         specified data type.
 
@@ -31,7 +31,7 @@ class String:
 
         Returns
         -------
-        Callable
+        `Callable`
             A decorated function.
         """
         def wrapper(func):
