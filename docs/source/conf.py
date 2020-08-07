@@ -36,7 +36,6 @@ extensions = [
     'sphinx.ext.coverage',
     'sphinx.ext.napoleon',
     'sphinx.ext.mathjax',
-    'sphinx_autodoc_typehints',
     'recommonmark',
     'sphinxcontrib.apidoc'
 ]
