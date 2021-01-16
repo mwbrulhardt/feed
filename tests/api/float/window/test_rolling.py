@@ -32,6 +32,7 @@ configurations = [
 def test_rolling_count():
     for array, config in product(arrays, configurations):
         s = Stream.source(array, dtype="float")
+
         w = s.rolling(**config).count().rename("w")
         expected = list(pd.Series(array).rolling(**config).count())
 

@@ -1,27 +1,61 @@
 feed.api.float package
 ======================
 
-.. automodule:: feed.api.float
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
 Subpackages
 -----------
 
 .. toctree::
-   :maxdepth: 6
+   :maxdepth: 4
 
    feed.api.float.window
 
 Submodules
 ----------
 
-.. toctree::
-   :maxdepth: 6
+feed.api.float.accumulators module
+----------------------------------
 
-   feed.api.float.accumulators
-   feed.api.float.imputation
-   feed.api.float.operations
-   feed.api.float.ordering
-   feed.api.float.utils
+.. automodule:: feed.api.float.accumulators
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+feed.api.float.imputation module
+--------------------------------
+
+.. automodule:: feed.api.float.imputation
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+feed.api.float.operations module
+--------------------------------
+
+.. automodule:: feed.api.float.operations
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+feed.api.float.ordering module
+------------------------------
+
+.. automodule:: feed.api.float.ordering
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+feed.api.float.utils module
+---------------------------
+
+.. automodule:: feed.api.float.utils
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Module contents
+---------------
+
+.. automodule:: feed.api.float
+   :members:
+   :undoc-members:
+   :show-inheritance:

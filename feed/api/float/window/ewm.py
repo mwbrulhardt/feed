@@ -31,7 +31,7 @@ class ExponentialWeightedMovingAverage(Stream[float]):
 
     References
     ----------
-    [1] https://github.com/pandas-dev/pandas/blob/d9fff2792bf16178d4e450fe7384244e50635733/pandas/_libs/window/aggregations.pyx#L1801
+    .. [1] https://github.com/pandas-dev/pandas/blob/d9fff2792bf16178d4e450fe7384244e50635733/pandas/_libs/window/aggregations.pyx#L1801
     """
 
     def __init__(self,
@@ -95,6 +95,7 @@ class ExponentialWeightedMovingAverage(Stream[float]):
 
         self.avg = None
         self.old_wt = 1
+        super().reset()
 
 
 class ExponentialWeightedMovingCovariance(Stream[float]):
@@ -236,14 +237,13 @@ class ExponentialWeightedMovingCovariance(Stream[float]):
         self.sum_wt = 1
         self.sum_wt2 = 1
         self.old_wt = 1
+        super().reset()
 
 
 class EWM(Stream[List[float]]):
     r"""Provide exponential weighted (EW) functions.
 
-    Available EW functions: ``mean()``, ``var()``, ``std()``, ``corr()``, ``cov()``.
-
-    Exactly one parameter: ``com``, ``span``, ``halflife``, or ``alpha`` must be
+    Exactly one parameter: `com`, `span`, `halflife`, or `alpha` must be
     provided.
 
     Parameters
@@ -261,7 +261,6 @@ class EWM(Stream[List[float]]):
         If ``times`` is specified, the time unit (str or timedelta) over which an
         observation decays to half its value. Only applicable to ``mean()``
         and halflife value will not apply to the other functions.
-        .. versionadded:: 1.1.0
     alpha : float, optional
         Specify smoothing factor :math:`\alpha` directly,
         :math:`0 < \alpha \leq 1`.
@@ -274,16 +273,16 @@ class EWM(Stream[List[float]]):
         - When ``adjust=True`` (default), the EW function is calculated using weights
           :math:`w_i = (1 - \alpha)^i`. For example, the EW moving average of the series
           [:math:`x_0, x_1, ..., x_t`] would be:
-            .. math::
-                y_t = \frac{x_t + (1 - \alpha)x_{t-1} + (1 - \alpha)^2 x_{t-2} + ... + (1 -
-                \alpha)^t x_0}{1 + (1 - \alpha) + (1 - \alpha)^2 + ... + (1 - \alpha)^t}
+        .. math::
+            y_t = \frac{x_t + (1 - \alpha)x_{t-1} + (1 - \alpha)^2 x_{t-2} + ... + (1 -
+            \alpha)^t x_0}{1 + (1 - \alpha) + (1 - \alpha)^2 + ... + (1 - \alpha)^t}
         - When ``adjust=False``, the exponentially weighted function is calculated
           recursively:
-            .. math::
-                \begin{split}
-                    y_0 &= x_0\\
-                    y_t &= (1 - \alpha) y_{t-1} + \alpha x_t,
-                \end{split}
+        .. math::
+            \begin{split}
+                y_0 &= x_0\\
+                y_t &= (1 - \alpha) y_{t-1} + \alpha x_t,
+            \end{split}
     ignore_na : bool, default False
         Ignore missing values when calculating weights.
         - When ``ignore_na=False`` (default), weights are based on absolute positions.
@@ -291,11 +290,11 @@ class EWM(Stream[List[float]]):
 
     See Also
     --------
-    [1] https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.ewm.html
+    .. [1] https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.ewm.html
 
     References
     ----------
-    [1] https://github.com/pandas-dev/pandas/blob/d9fff2792bf16178d4e450fe7384244e50635733/pandas/core/window/ewm.py#L65
+    .. [1] https://github.com/pandas-dev/pandas/blob/d9fff2792bf16178d4e450fe7384244e50635733/pandas/core/window/ewm.py#L65
     """
 
     def __init__(
@@ -399,6 +398,10 @@ class EWM(Stream[List[float]]):
         """
         return self.var(bias).sqrt()
 
+    def reset(self) -> None:
+        self.history = []
+        self.weights = []
+        super().reset()
 
 @Float.register(["ewm"])
 def ewm(s: "Stream[float]",

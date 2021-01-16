@@ -1,15 +1,21 @@
 feed.api.string package
 =======================
 
-.. automodule:: feed.api.string
+Submodules
+----------
+
+feed.api.string.operations module
+---------------------------------
+
+.. automodule:: feed.api.string.operations
    :members:
    :undoc-members:
    :show-inheritance:
 
-Submodules
-----------
+Module contents
+---------------
 
-.. toctree::
-   :maxdepth: 6
-
-   feed.api.string.operations
+.. automodule:: feed.api.string
+   :members:
+   :undoc-members:
+   :show-inheritance:

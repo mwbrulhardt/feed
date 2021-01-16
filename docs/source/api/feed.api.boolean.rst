@@ -1,15 +1,21 @@
 feed.api.boolean package
 ========================
 
-.. automodule:: feed.api.boolean
+Submodules
+----------
+
+feed.api.boolean.operations module
+----------------------------------
+
+.. automodule:: feed.api.boolean.operations
    :members:
    :undoc-members:
    :show-inheritance:
 
-Submodules
-----------
+Module contents
+---------------
 
-.. toctree::
-   :maxdepth: 6
-
-   feed.api.boolean.operations
+.. automodule:: feed.api.boolean
+   :members:
+   :undoc-members:
+   :show-inheritance:

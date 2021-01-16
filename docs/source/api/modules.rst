@@ -2,6 +2,6 @@ feed
 ====
 
 .. toctree::
-   :maxdepth: 6
+   :maxdepth: 4
 
    feed

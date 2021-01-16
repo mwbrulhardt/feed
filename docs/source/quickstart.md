@@ -1,6 +1,5 @@
-# feed
 
-A streamable version of pandas for online computation.
+# Quickstart
 
 
 ### Installation
@@ -9,7 +8,7 @@ Install `canapi` from PyPi using:
 pip install feed-stream
 ```
 
-### Making a DataFeed
+### Make a Feed
 The following example shows how to make a streaming Fibonacci Sequence:
 
 ```py
@@ -24,4 +23,4 @@ f = (f1 + f2).rename("fibonacci")
 feed = DataFeed([s])
 ```
 
-If you would like to know more about `feed` visit the [documentation](https://feed.readthedocs.io/en/latest/).!
+If you would like to know more go through our more thorough walkthrough!

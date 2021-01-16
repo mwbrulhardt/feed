@@ -28,12 +28,16 @@ class RollingNode(Stream[float]):
         rolling = self.inputs[0]
         history = rolling.value
 
-        output = np.nan if rolling.n - rolling.nan < rolling.min_periods else self.func(history)
-
-        return output
+        if rolling.n - rolling.nan < rolling.min_periods:
+            return np.nan
+        return self.func(history)
 
     def has_next(self) -> bool:
         return True
+
+    def reset(self) -> None:
+        self.n = 0
+        super().reset()
 
 
 class RollingCount(RollingNode):
@@ -46,6 +50,8 @@ class RollingCount(RollingNode):
     def forward(self):
         rolling = self.inputs[0]
         history = rolling.value
+        if rolling.n <= rolling.min_periods - 1:
+            return np.nan
         return self.func(history)
 
 
@@ -193,6 +199,12 @@ class Rolling(Stream[List[float]]):
         """
         func = np.nanmax if self.min_periods < self.window else np.max
         return self.agg(func).astype("float")
+
+    def reset(self) -> None:
+        self.n = 0
+        self.nan = 0
+        self.history = []
+        super().reset()
 
 
 @Float.register(["rolling"])

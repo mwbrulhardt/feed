@@ -2,41 +2,20 @@ Welcome to feed's documentation!
 ================================
 
 
-Another simple header
-=====================
-
-Here is some text explaining some very complicated stuff.::
-
-    print("Hello world!!")
-    >> Hello world!!
-
-Guide
-^^^^^
-
 .. toctree::
-    :maxdepth: 1
-    :hidden:
+   :maxdepth: 2
+   :caption: Contents:
 
-    Home <self>
-
-.. toctree::
-    :maxdepth: 2
-    :caption: Overview
-
-    overview/getting_started
+   quickstart.md
+   walkthrough.md
 
 
 .. toctree::
-    :maxdepth: 2
-    :caption: Tutorials
+   :maxdepth: 1
+   :caption: API reference
 
-    tutorials/example_tutorial
+   API reference <api/modules>
 
-.. toctree::
-    :maxdepth: 2
-    :caption: API Reference
-
-    API reference <api/modules>
 
 
 Indices and tables

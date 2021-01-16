@@ -1,18 +1,45 @@
 feed.api.generic package
 ========================
 
-.. automodule:: feed.api.generic
+Submodules
+----------
+
+feed.api.generic.imputation module
+----------------------------------
+
+.. automodule:: feed.api.generic.imputation
    :members:
    :undoc-members:
    :show-inheritance:
 
-Submodules
-----------
+feed.api.generic.operators module
+---------------------------------
 
-.. toctree::
-   :maxdepth: 6
+.. automodule:: feed.api.generic.operators
+   :members:
+   :undoc-members:
+   :show-inheritance:
 
-   feed.api.generic.imputation
-   feed.api.generic.operators
-   feed.api.generic.reduce
-   feed.api.generic.warmup
+feed.api.generic.reduce module
+------------------------------
+
+.. automodule:: feed.api.generic.reduce
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+feed.api.generic.warmup module
+------------------------------
+
+.. automodule:: feed.api.generic.warmup
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Module contents
+---------------
+
+.. automodule:: feed.api.generic
+   :members:
+   :undoc-members:
+   :show-inheritance:

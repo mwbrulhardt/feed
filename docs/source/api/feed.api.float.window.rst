@@ -1,17 +1,37 @@
 feed.api.float.window package
 =============================
 
-.. automodule:: feed.api.float.window
+Submodules
+----------
+
+feed.api.float.window.ewm module
+--------------------------------
+
+.. automodule:: feed.api.float.window.ewm
    :members:
    :undoc-members:
    :show-inheritance:
 
-Submodules
-----------
+feed.api.float.window.expanding module
+--------------------------------------
 
-.. toctree::
-   :maxdepth: 6
+.. automodule:: feed.api.float.window.expanding
+   :members:
+   :undoc-members:
+   :show-inheritance:
 
-   feed.api.float.window.ewm
-   feed.api.float.window.expanding
-   feed.api.float.window.rolling
+feed.api.float.window.rolling module
+------------------------------------
+
+.. automodule:: feed.api.float.window.rolling
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Module contents
+---------------
+
+.. automodule:: feed.api.float.window
+   :members:
+   :undoc-members:
+   :show-inheritance:
